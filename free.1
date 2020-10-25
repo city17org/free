@@ -1,0 +1,55 @@
+.\"
+.\"Copyright (c) 2018 Sean Davies <sean@city17.org>
+.\"
+.\"Permission to use, copy, modify, and distribute this software for any
+.\"purpose with or without fee is hereby granted, provided that the above
+.\"copyright notice and this permission notice appear in all copies.
+.\"
+.\"THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+.\"WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+.\"MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+.\"ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+.\"WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+.\"ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+.\"OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+.\"
+.Dd $Mdocdate: June 28 2020 $
+.Dt FREE 1
+.Os
+.Sh NAME
+.Nm free
+.Nd display the amount of free and used memory
+.Sh SYNOPSIS
+.Nm
+.Op Fl b | g | k | m | v
+.Sh DESCRIPTION
+.Nm
+is a utility that displays the amount of free and used physical and virtual
+memory in the system.
+.Pp
+When run without any options
+.Nm
+will use the default output of kilobytes.
+.Pp
+The options are as follows:
+.Bl -tag -width Ds
+.It Fl b
+Display output in bytes.
+.It Fl g
+Display output in gigabytes.
+.It Fl k
+Display output in kilobytes.
+.It Fl m
+Display output in megabytes.
+.It Fl v
+Display version information.
+.El
+.Sh EXIT STATUS
+.Ex -std
+.Sh SEE ALSO
+.Xr top 1 ,
+.Xr sysctl 2 ,
+.Xr vmstat 8 ,
+.Xr uvm_init 9
+.Sh AUTHORS
+.An Sean Davies Aq Mt sean@city17.org
