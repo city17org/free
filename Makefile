@@ -1,9 +1,10 @@
 BIN	= free
+MAN	= $(BIN).1
 OBJ	= $(BIN).o
 
 PREFIX	= /usr/local
 BINDIR	= $(PREFIX)/bin
-MANDIR	= $(PREFIX)/man
+MANDIR	= $(PREFIX)/man/man1
 
 CC	= cc
 CFLAGS	= -std=c99 -pedantic -Wall -Wextra -Werror -O2
@@ -21,10 +22,10 @@ clean:
 
 install: $(BIN)
 	install -m0755 $(BIN) $(BINDIR)
-	install -m0644 $(BIN).1 $(MANDIR)/man1
+	install -m0644 $(MAN) $(MANDIR)
 
 uninstall:
 	rm -f $(BINDIR)/$(BIN)
-	rm -f $(MANDIR)/man1/$(BIN).1
+	rm -f $(MANDIR)/$(MAN)
 
 .PHONY: all clean install uninstall
