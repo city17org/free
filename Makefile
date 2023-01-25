@@ -1,6 +1,6 @@
 BIN	= free
+SRC	= $(BIN).c
 MAN	= $(BIN).1
-OBJ	= $(BIN).o
 
 PREFIX	= /usr/local
 BINDIR	= $(PREFIX)/bin
@@ -11,14 +11,11 @@ CFLAGS	= -std=c99 -pedantic -Wall -Wextra -Werror -O2
 
 all: $(BIN)
 
-.c.o:
-	$(CC) -c $(CFLAGS) -o $@ $<
-
-$(BIN): $(OBJ)
-	$(CC) -o $@ $(OBJ)
+$(BIN):
+	$(CC) -o $(BIN) $(SRC)
 
 clean:
-	rm -f $(BIN) $(OBJ)
+	rm -f $(BIN)
 
 install: $(BIN)
 	install -m0755 $(BIN) $(BINDIR)
